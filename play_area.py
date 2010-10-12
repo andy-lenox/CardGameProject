@@ -18,6 +18,7 @@ class play_area:
 	def __init__(self):
 		self.p1Stack = stack.stack()
 		self.p2Stack = stack.stack()
+		self.stacks = [self.p1Stack, self.p2Stack]
 		
 	def compare(self):
 		return math.fabs( self.p1Stack.top() - self.p2Stack.top() )
@@ -37,6 +38,15 @@ class play_area:
 		for x in self.p2Stack:
 			discard.append(self.p2Stack)
 		return discard
+	
+	#untested	
+	def clearPlayArea(self):
+		self.clearP1Pile()
+		self.clearP2Pile()
+	
+	#untested	
+	def playCard(self, player, card):
+		self.stacks[player - 1].push(card)
 
 class play_areaTests(unittest.TestCase):
 	def setUp(self):
