@@ -47,6 +47,9 @@ class play_area:
 	#untested	
 	def playCard(self, player, card):
 		self.stacks[player - 1].push(card)
+		
+	def start(self):
+		pass
 
 class play_areaTests(unittest.TestCase):
 	def setUp(self):
